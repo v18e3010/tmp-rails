@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      memo: メモ  #g
+      post: 役職  #g
+
+    attributes:
+      memo:
+        body: 体  #g
+        title: タイトル  #g
+
+      post:
+        body: 体  #g
+        title: タイトル  #g
