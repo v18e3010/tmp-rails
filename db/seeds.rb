@@ -8,4 +8,7 @@
 5.times do |i|
     Post.create(title:"title #{i}",body: "body #{i}")
 end
-    
+
+3.times do |i|
+    Post.find(1).comments.create(body: "body #{i}")
+end
