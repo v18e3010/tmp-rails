@@ -1,16 +1,20 @@
 <h2><%= @post.title %></h2>
+<%= simple_format @post.user.display_name, class: "text-right" %>
 <p><%= simple_format @post.body %></p>
 <h3>Comments</h3>
+
 <% if @post.comments.any? %>
 <ul>
     <% @post.comments.each do |comment| %>
     <li>
-        <% comment.body %>
+        <%= comment.body %>
+        <% if current_user && current_user.id == @post.user_id %>
+        <%= link_to "t", root_path %>
         <%= link_to '[x]',
         post_comment_path(@post,comment),
         method: :delete,
-        class: 'command',
         data: { confirm: 'Sure?' } %>
+        <% end %>
     </li>
     <% end %>
 </ul>
